@@ -1,0 +1,957 @@
+===================================================================
+	JavaScript - Master the Fundamentals in 6 Hours
+===================================================================
+*******************************************************************
+		Section-01 =====> Get Started
+*******************************************************************
+1. What is JS ?
+=> JS is most popular programming language for Front-end,back-end and fullstack developer.
+
+2. What can we do with JS ?
+=> JS is used to build application like
+   * Web/Mobile Apps
+   * Realtime Networking Apps
+   * Command Line Tools
+   * Games
+
+3. Where does JS code run ?
+=> We can run JavaScript in browser (or) in node.
+   * Browser: Every browser is javascript engine 
+   Ex:- FireFox: Spider Monkey
+        Chrome: v8
+
+   * Node: It is a C++ programme that includes Google v8 JavaScript engine.
+
+   * Browser & Node provides Runtime environment for JS cde	
+
+4. Diff b/w JS & ECMAScript ?
+=> JS: * Programming Language that confirms the specifiaction (like Hibernet)
+   ES: * Specification (like JPA in springboot)
+
+       * In 2015 - ES2015/ES6 was released - it includes many new features for JS.
+
+5. Just for Demo :
+   * Open any brower(Chrome) -> right click -> Inspect -> console -> type: console.log('Hello world'); -> enter
+   * Type: 2+2 -> enter
+   * type: alert('hi') -> enter
+
+6. SetUp Environment
+   - To write JS we can use Editors
+     * Visual Studio Code (VSCode) - download this
+     * Sublime Text
+     * Atom
+   - Also Install Node from nodejs 
+     * Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+7. Create a folder -> "js-basics workspace" -> open this in VS -> create a new file -> "index.html" -> type: ! -> enter -> save
+
+   -> Click on Extenions -> install "Live Server" 
+   -> Right click on "index.html" file -> select: Open with Live Server
+   -> Under body tag add -> <h1>Hello World</h1>
+
+8. Its time to write JS
+   -> Js will be written in <script> tag
+   -> <script> can be used inside <head> tag (or) in <body> tag at the end (or) bottom
+   -> As a best practice we can add <script> in the <body> tag
+
+9. Separation of Concern
+   * HTML is all about content
+   * JS is all about behaviour
+
+   9.1 Create new file -> index.js -> write all logic in this js file.
+   9.2 Now we can refer the js file using src="" 
+       <script src="index.js"> </script>
+
+10. JS execute in Node
+    -> Open the current folder in CMD (or) open the terminal in VS
+    -> command: node index.js -> enter
+
+*******************************************************************
+		Section-02 =====> Basics
+*******************************************************************
+
+11. Variables -> var/let VariableName = value;
+    -> Before ES6 the variables are declared using var, From ES6 the variables should be declared using "let"
+    -> Conditions to create a variable
+	* let name; -> initially the default value is undifined
+	* We should not use variable names as already predefined keywards
+	  Ex: if, else, class...etc
+	* Variable name should be meaningful 
+	  Ex: not like -> a, a1, b1,c2.....etc
+	      like -> username, password.....etc
+	* Variable name can't start with number
+	  Ex: 1name, 2password....etc
+	* Variable name can't contain space (or) hyphen (-)
+	* We should follow camel notations
+	  Ex: firstName, lastName...etc
+	* Variables are case-sensitive
+	  Ex: firstName and FirstName both are different
+
+12. Constants (Keyword = "const")
+    -> When you want a variable that should not be reassign or should be fixed, we can use constant variables
+    Ex: const interestRate = 0.3;
+
+13. Data Types: 2 types
+	1) Primitive/value Types
+	2) Reference Types
+
+    1) Primitive/value Types
+	* String
+	* Number
+	* Boolean
+	* Undefined
+	* null
+	Ex: let name = 'Nagaraja'; //String Literal 
+	    let age = 25; //Number Literal
+	    let isApproved = false; //Boolean Literal
+	    let firstName; //undefined
+	    let lastName = null; //null
+
+    2) Reference Types
+	* Object
+ 	* Array
+	* Function
+	
+	* Object {} -> It is a real world entities, example a person, he has some properties like name and age
+		Ex: let person = {
+			name: 'nagaraja',
+			age: 24
+		    }
+		    console.log(person);
+		-> How can we access (or) modify these properties
+		   // Dot Notation	
+			person.name = 'nagu';
+			console.log(person.name);
+
+	* Arrays [] -> When your deal with list of somethings like products we can use arrays.
+		Ex: let selectedColors = ['red','blue'];
+		    console.log(selectedColors);
+		-> How can we access (or) modify these list of elements
+		   // By passing index values
+			console.log(selectedColors[0]);
+		   // JS is dynamic language so we can add elements at runtime
+			 selectedColors[2] = 'green';
+			 console.log(selectedColors);
+		   // JS is dynamic language so we can add different type of values in array at runtime
+			 selectedColors[3] = 123;
+			 console.log(selectedColors);
+
+	
+	* Functions -> function functionName(){body}:
+		-> Functions are one of the building blocks in JS
+		-> A function is basically a set of statments that performs a task or calculates a value
+		-> A function is reusable 
+
+		Ex1: function greet() {
+			console.log('Hello World');
+		    }
+		    //call the function
+		    greet();
+
+		Ex2: // function with sending parameters
+		     function greet(name) {
+			console.log('Hello '+ name);
+		    }
+		    //call the function & passing "arguments"
+		    greet('nagaraja');
+		    // function is reusable
+		    greet('raja');
+
+		Ex2: // function with sending more than one parameters
+		     function greet(name, lastName) {
+			console.log('Hello '+ name +' '+ lastName);
+		    }
+		    //call the function & passing "arguments"
+		    greet('Nagaraja', 'R');
+
+	
+
+			
+
+14. Dynamic Typing: JS is a Dynamic language
+	There are 2 types of languges
+	1) Static (Statically-Typed) language:- once we declare a value we can't change the type of variable in future.
+	Ex: string name = 'nagaraja';
+	    name = 123; // Error
+
+	2) Dynamic (Dynamically-Typed) language:- We can change the type of variable at run-time
+	Ex: let name = 'nagaraja';//String
+	    name = 123; // Number
+
+*******************************************************************
+		Section-03 =====> Operarators
+*******************************************************************
+
+15. JS Operarators
+	*Arithmetic (+, -, *, /, %, **(powerOf), ++, --)
+	*Assignment (=, +=,-=, *=, /=, %=)
+	*Comparison (>,<,>=,<=, ===, !==, ==)
+		//Strict Equality (Type + Value)
+		console.log(1 === 1); //true
+		console.log('1' === 1); //false
+
+		//Loose Equality (left Value+ convert right value as of left type)
+		console.log(1 == 1); //true
+		console.log('1' == 1); //true
+		console.log(true == 1); //true
+		
+	*Logical ( &&, ||, ! )
+		//Falsy (false) values
+		* undefined
+		* null
+		* 0
+		* false
+		* ''
+		* NaN -> Not a Number
+		// anything that is not falsy -> Truthy
+
+	*Ternary or conditional ( true/false ? return true : return false )
+				  100 > 101 ? true : false ;
+	*Bitwise ( &, | ) 
+
+*******************************************************************
+		Section-04 =====> Control flow
+*******************************************************************
+
+16. Control flow
+	16.1 Conditional statements
+	         i) if...else
+		ii) switch...case 
+	16.2 Loops
+		 i) For
+		ii) while
+	       iii) Do..while
+		iv) for..in -> It is used to iterate the properties of object and arrays
+			Ex: let person = {
+					   name: 'Nagaraja',
+					   age : 24
+					 }
+			    for(let key in person){
+				console.log(key, person[key]);
+			    }
+			
+			    const colors = ['red','green','blue'];
+			    for(let index in colors){
+				console.log(index, colors[index]);
+			    }
+	
+		 v) for..of -> this is same as for..in loop but here we will directly get elements values 	
+			   const colors = ['red','green','blue'];
+			    for(let color of colors){
+				console.log(color);
+			    }
+
+
+17. Code Practice
+
+// Find max of two numbers
+let number = max(3, 6)
+console.log(number);
+function max(a, b){
+   return (a > b) ? a : b;
+}
+
+//Landscape or portrait
+let result = isLandscape(7, 14);
+console.log(result);
+
+function isLandscape(width, hieght){
+    return (width > hieght) ? 'Landscape' : 'Portrait';
+}
+
+//FizzBuzz -> it should return string
+// if div by 3 -> Fizz
+// if div by 5 -> Buzz
+// if div by 3 & 5 -> FizzBuzz
+// if not div by 3 & 5 -> return that num
+// if you pass any parameter other than num -> return Not a Number
+
+let output = fizzBuzz(49);
+console.log(output);
+
+function fizzBuzz(num){
+    if(typeof num !== 'number')
+        return 'Not a Number';
+
+    if(num % 3 === 0 && num % 5 === 0)
+        return 'FizzBuzz';
+    else if(num % 3 === 0)
+        return 'Fizz';
+    else if(num % 5 === 0)
+        return 'Buzz';
+    else 
+        return num;
+       
+}
+
+//Demerit points
+//5 -> 1 point
+//12 points -> suspended
+
+
+checkSpeed(130);
+
+function checkSpeed(speed){
+    const speedLimit = 70;
+    const kmPerPoint = 5;
+
+    if(speed < speedLimit + kmPerPoint){
+        console.log('ok');
+        return;
+    }
+
+    const points = Math.floor((speed - speedLimit)/kmPerPoint)
+    if(points < 12)
+        console.log('Point '+ points);
+    else
+        console.log('License Suspended');
+
+}
+
+//Exerice Even and Odd numbers
+// Show EVEN or ODD based on number
+// Pass the limit
+
+showEvenOrOdd(10);
+
+function showEvenOrOdd(limit){
+    for(let i = 0; i <= limit; i++){
+        // if(i%2 === 0)
+        //     console.log(i + " EVEN");
+        // else
+        //     console.log(i + " ODD");
+
+        const message = (i % 2 == 0) ? 'EVEN' : 'ODD';
+        console.log(i, message);
+    }
+}
+
+//Exerice Count Truthy in a given array
+//Falsy values -> undefined, null, false, '', 0, NaN
+//Truthy values -> other than Falsy
+
+const array = [1,2, false, undefined];
+console.log('Count of Truthy values : '+ countTruthy(array));
+function countTruthy(array){
+    let count = 0;
+    for(let value of array){
+        if(value){
+            count++;
+        }  
+    }
+    return count;
+}
+
+//Exerice Show only string properties from the object
+
+const movie = {
+    title: 'a',
+    releaseDate: 2018,
+    rating: 4.3,
+    director: 'b'
+}
+
+showProperties(movie);
+
+function showProperties(movie){
+    for(let key in movie)
+    {
+        if(typeof movie[key] === 'string')
+            console.log(key, movie[key])
+    }
+}
+
+//Exercise Sum of multiples of 3 and 5
+console.log('Sum of multiples of 3 and 5 from given limit is '+ sum(10));
+
+function sum(num){
+    let total = 0;
+    for(let i = 1; i <= num; i++)
+        if((i % 3 === 0) || (i % 5 === 0))
+            total+=i;
+
+    return total;
+
+}
+
+//Exercise calculate grade
+// If Average
+// 1 - 59  : F
+// 60 - 69 : D
+// 70 - 79 : C
+// 80 - 89 : B
+// 90 - 100: A
+
+const marks = [72, 58, 85];
+
+console.log('Grade is : '+calculateGrade(marks))
+
+function calculateGrade(marks)
+{
+    let average = calculateAverage(marks);
+
+    if(average < 60) return 'F';
+    if(average < 70) return 'D';
+    if(average < 80) return 'C';
+    if(average < 90) return 'B';
+    return 'A';
+}
+
+function calculateAverage(array){
+    let sum = 0;
+    for(let value of array)
+        sum+=value;
+    return sum / array.length;
+}
+
+//Exercise Stars
+
+showStars(10);
+
+ function showStars(rows){
+    for(let i = 1; i <= rows; i++)
+    {
+        let pattern = '';
+        for(let j = 1; j <= i; j++){
+            pattern += '*';
+        }
+        console.log(pattern);  
+    }
+
+ }
+
+//Exercise Prime Number
+showPrimes(20);
+
+function showPrimes(limit){
+    for(let i = 2; i <= limit; i++){
+        let count = 0;
+        for(let j = 2; j <= i/2; j++){
+            if(i % j === 0){
+                count++
+            }
+        }
+        if(count == 0){
+            console.log(i)
+        }
+    }
+}
+
+//second approach
+showPrimes1(20);
+
+function showPrimes1(limit){
+    for(let number = 2; number <= limit; number++)
+        if(isPrime(number)) console.log(number);
+    
+}
+
+function isPrime(number){
+    for(let factor = 2; factor < number; factor++)
+        if(number % factor === 0)
+            return false;
+
+    return true;    
+}
+
+*******************************************************************
+		Section-05 =====> Objects
+*******************************************************************
+ -> Incase if you see the variables are related to each other, its better approach to create a object and then have those variable in a single entity
+ -> The purpose of object is to group related variables.
+
+18. Object basics: Literal syntax for object creation
+
+Ex:	let length = 10;
+	let hieght = 5;
+	let width = 5;
+	let volume = length * hieght * width;
+
+	-----------Instead of above----------
+
+	let rectangle = {
+		length: 10;
+		hieght: 5;
+		width: 5;
+		volume: length * height * width;
+		area: length * height;
+	}
+	
+	console.log(rectangle.volume);
+	console.log(rectangle.area);
+
+19. Factory Function:
+ -> Senario: If you want multiple objects to be created then you are going create multiple objects with same properties, it will cause the dupplication of objects to avoid this scenario Factory Functions come into picture.
+
+Ex:
+// Factory Functions pattern
+// Instead of creating as a object manually everytime make it as function with custom inputs
+
+function createCircle(radius){
+    return {
+        radius,
+        draw() {
+            console.log('Draw..!')
+        }
+        //(o)r
+        // radius: radius, // if passing input and variable having same name no need give the parmeter name again
+        // draw: function(){
+        //     console.log('Draw..!')
+        // }
+    };
+}
+
+const circle1 = createCircle(1);
+console.log(circle1);
+
+const circle2 = createCircle(2);
+console.log(circle2);
+
+Note: Camel Notation: oneTwoThreeFour --> this namming convention used for function & variables
+      Pascal Notation: OneTwoThreeFour --> this namming convention used for classes & constructors
+
+20. Constructor Functions:
+ -> Constructors are used to initilize the properties of a object or to create the object
+
+Ex:
+// Constructor Functions Pattern
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('Draw....!');
+    }
+}
+
+const circle3 = new Circle(1);
+console.log(circle3);
+
+Note: Both Factory Function and Constructor Function are used for creating objects, if your familier with java (or) C# go with Constructor Function Pattern 
+
+21. Value v/s Reference Types
+	
+	Value Types		Reference Types
+|-------------------------------------------------------|
+|	Number			Object			|
+|	String			Function		|
+|	Boolean			Array			|
+|	Symbol						|
+|	Undefined					|
+|	null						|
+ --------------------------------------------------------  
+
+ -> Primitives are copied by their value
+ -> Objects are copied by their reference 
+
+Ex: const circle = {
+	radius: 1,
+	draw() {
+	  console.log('draw');
+	}
+    };
+
+Note: for(let x of array) is only used for Arrays & Maps
+      for(let x in object) is only used for object iteration
+ -> using for..in
+	for(let key in circle){
+	   console.log(key, circle[key]);
+	}
+
+ -> Incase if you want to iterate object using for..of loop follow bellow cases
+ a) for(let key of Object.keys(circle)){
+	console.log(key);
+    }
+
+ b) for(let entry of Object.entries(circle)){
+	console.log(entry);
+    }
+
+ c) check the object contains some value
+    if('radius' in circle) console.log('yes');
+
+22. Clonning an object
+ -> There are three ways to clone an object
+    // Clone an Object 
+ a) 1st way -> using for..in loop
+	const another1 = {};
+	for(let key in circle3)
+    	   another1[key] = circle3[key];
+
+	console.log(another1);
+
+ b) 2nd way -> using assign method from Object
+	const another2 = Object.assign({}, circle3);
+	console.log(another2);
+
+ c) 3rd way -> using spread operator
+	const another3 = { ...circle3 };
+	console.log(another3);
+
+
+23. Built in Objects
+    23.1 Math Object: Math is a built-in object that has properties and methods for mathematical constants and functions. It's not a function object.
+
+	 Math works with the Number type. It doesn't work with BigInt.
+
+	 Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+	
+	 Ex: Math.PI, Math.abs(), Math.round(), Math.random() ....etc
+
+    23.2 String Object: The String object is used to represent and manipulate a sequence of characters.
+	 
+	 Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+	 
+	 Ex: const string1 = "A string primitive"; // typeOf string1 -> "string"
+	     const string4 = new String("A String object"); // typeOf string4 -> "Object"
+
+    23.3 Date Object: JavaScript Date objects represent a single moment in time in a platform-independent format. Date objects contain a Number that represents milliseconds since 1 January 1970 UTC.
+    
+         Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+	 Ex: Ways to Create Date Objects
+	     a) const now = new Date();
+	     b) const date1 = new Date('May 11 2018 09:00');
+	     c) const date2 = new Date(2018, 4, 11, 9);
+     Note: There are setters and getters methods for Date Objects
+
+
+*******************************************************************
+		Section-06 =====> Arrays
+*******************************************************************
+24. Adding Elements
+    // Adding elements
+    	const numbers = [3,4];
+
+    // Add elements at the end
+   	numbers.push(5,6);
+    	console.log(numbers);
+
+    // Add elements at the begining
+    	numbers.unshift(1,2);
+    	console.log(numbers);
+
+    // Add elements at the middle
+    	numbers.splice(2, 0, 'a','b');
+		    //(start_index, Delete_Elements, Adding_Elements_Array);
+    	console.log(numbers);
+
+25. Finding Elements in an array(Ex Primitives)
+    // There are some methods used to find the elements
+	const numbers1 = [1,2,3,4,5,6,7,5,1,3];
+    //a) indexOf -> This method will returns the index of the elements if exist else returns -1
+	console.log(numbers1.indexOf(5));
+
+    //b) lastIndexOf -> This method will returns the index of the elements that comes at last if exist else returns -1
+	console.log(numbers1.lastIndexOf(5));
+
+    //c) includes -> This method will return true if element found else return false
+	console.log(numbers1.includes(5));
+
+26. Finding Elements in an array(Reference type or Objects)
+    // There are two methods used to find the reference type
+	const courses = [
+    		{id: 1, name: 'naga'},
+    		{id: 2, name: 'raja'}
+	];
+
+    //a) find -> This method accept the function(element) as a input, if object found return the object else return undefined
+	const course = courses.find(function(course){
+                    		return course.name === 'naga';
+                	});
+	console.log(course);
+
+    //b) findIndex -> This method accept the function(element) as a input, if object found return the index of object else return -1
+	const course1 = courses.findIndex(function(course){
+    				return course.name === 'naga';
+			});
+	console.log(course1);
+
+27. Arrow Functions
+    // () => {}
+    // If your passing 1 variable no need to inculde ()
+    // If your returning only line no need to write "return" key word and {} also
+	const course3 = courses.find((course) => course.name === 'naga');
+	console.log(course3);
+
+28. Removing Elements from array
+	const elements = [1,2,3,4,5,6];
+
+    // Remove element at the end
+	elements.pop();
+	console.log(elements);
+
+    // Remove elements at the begining
+	elements.shift();
+	console.log(elements);
+
+    // Remove elements at the middle
+	elements.splice(2, 1);
+	console.log(elements);
+output:
+*******************************************************
+[ 1, 2, 3, 4, 5 ]
+[ 2, 3, 4, 5 ]
+[ 2, 3, 5 ]
+*******************************************************
+
+29. Emptying an array
+    // There 4 solutions to emplty an array
+	let numbersArray = [1,2,3,4,5];
+	let anotherArray = numbersArray;
+
+    // Solution - 1 => but this will not work if the array has multiple references
+	numbersArray = [];
+	console.log(numbersArray);
+	console.log(anotherArray);
+
+    // Solution - 2 => set the length of array to zero -> this is the more effective solution
+	numbersArray.length = 0;
+	console.log(numbersArray);
+	console.log(anotherArray);
+
+   // Solution - 3 => using splice method
+	numbersArray.splice(0, numbersArray.length);
+	console.log(numbersArray);
+	console.log(anotherArray);
+
+   // Solution - 3 => using pop method and put that in the loop -> Not recomended
+	while(numbersArray.length > 0)
+    		numbersArray.pop();
+
+	console.log(numbersArray);
+	console.log(anotherArray);
+
+
+30. Combining and slicing arrays
+	const first = [1,2,3];
+	const second = [4,5,6];
+    //a) Comibining arrays using concat method
+	const combine = first.concat(second);
+	console.log(combine);
+
+    //b) Slicing(deviding) arrays using slice method
+    //const slice = combine.slice(2,4); // It will start from index 2 and end at index 4
+    //const slice = combine.slice(2); // It will start from index 2 till end
+	const slice = combine.slice(); // It will create a copy of combine array
+	console.log(slice);
+
+    // Incase of objects array, the reference will be copied into to the array 
+    // Incase if you modified that object content using reference same will be reflected in the original array
+
+31. Combining arrays using spread operator(...) -> 3 dot's
+	const combine1 = [...first,'a','b', ...second];
+    // copy the array
+	const copy = [...combine1];
+	console.log(combine1);
+
+32. Iterating an array
+	const list = [1,2,3,4,5];
+    //a) using for..of loop
+	for(let value of list)
+    		console.log(value);
+
+    //b) using forEach loop
+	list.forEach(function(number){
+    		console.log(number);
+	}); 
+
+    //c) using forEach loop with Lamda Expression
+	list.forEach(number => console.log(number)); 
+
+    //d) using forEach loop with Lamda Expression and printing index also
+	list.forEach((number, index) => console.log(index,number)); 
+
+33. Joining Arrays
+	const numbersList = [1,2,3,4];
+	console.log(numbersList);
+
+    // Using join method we can join the array
+	const joined = numbersList.join(',');
+	console.log(joined);
+
+    // Split the given string into array using split method
+	const message = 'This is my first name';
+	const parts = message.split(' ');
+	console.log(parts);
+
+    // Join the above combined array by using join method
+	const combined = parts.join('-');
+	console.log(combined);
+
+34. Sorting Array
+	const numbersList1 = [5,4,1,6,3,7,2];
+
+    // sort above array using sort method
+	numbersList1.sort(); // Assending Order
+	console.log(numbersList1);
+
+	numbersList1.reverse(); // dessending Order
+	console.log(numbersList1);
+
+
+    // Incase of objects how can we sort ?
+	const coursesList = [
+    		{id: 1, name: 'Hari'},
+    		{id: 2, name: 'akshya'},
+    		{id: 3, name: 'Kiran'}
+	];
+
+    // For object sorting, the sort method accept the function to sort
+	coursesList.sort(function(a,b){
+    		//if a < b => -1
+    		//if a > b =>  1
+    		//if a = b =>  0
+    		//Note : incase the first letter in uppercase for one and other in lower case - ascii values are different
+    		const nameA = a.name.toLowerCase(); // convert lower or uppercase, but both in same type
+    		const nameB = b.name.toLowerCase();
+
+    		if(nameA < nameB) return -1;
+    		if(nameA> nameB) return 1;
+    		return 0;
+
+	});
+
+	console.log(coursesList);
+
+
+35. Testing the Elements of an Array
+	const numbersList2 = [1,5,8];
+    //a) Using every() method we can test the array has only positive numbers or not
+	const allPositive1 = numbersList2.every(function(value){
+    		return value >= 0;
+	});
+
+	console.log(allPositive1);
+
+	const numbersList3 = [1,5,8,-1];
+	const allPositive2= numbersList3.every(function(value){
+    		return value >= 0;
+	});
+
+	console.log(allPositive2);
+
+    //b) Using some() method we can test the array has atleast one negative number present or not
+	const numbersList4 = [1,5,8];
+	const allPositive3 = numbersList2.some(function(value){
+    		return value >= 0;
+	});
+
+	console.log(allPositive3);
+
+	const numbersList5 = [1,5,8,-1];
+	const allPositive4= numbersList3.every(function(value){
+    		return value >= 0;
+	});
+
+	console.log(allPositive4);
+
+36. Filtering an Array
+	const numbersList6 = [1,8,6,-1,2,-3];
+
+    // using filter() method we can filter the elemets of array
+	const filteredArray = numbersList6.filter(n => n >= 0);
+
+	console.log(filteredArray);
+
+37. Mapping an Array
+	const numbersList7 = [1,8,6,-1,2,-3];
+    //const filtered = numbersList7.filter(n => n >= 0);
+
+    // Using map() method we can convert one form of array to another form
+    // map -> Data Transfer
+    // convert array into objects array
+	//const item = filtered.map(n => ({value : n}));
+
+    //short & clean
+	const item = numbersList7
+		.filter(n => n >= 0) // filtering
+    		.map(n => ({value : n})) // converting number array into object array
+    		.filter(obj => obj.value > 1) // again filtering
+    		.map(obj => obj.value); // converting object array into number array
+
+	console.log(item);
+
+38. Reducing an Array
+	const numbersList8 = [1,6,5,7,9];
+
+    //a) 1st way of finding sum
+	let sum1 = 0;
+	for(let n of numbersList8){
+    		sum1 += n;
+	}
+	console.log(sum1);
+
+    //b) 2nd way of finding sum using reduce() method
+    // Syntax
+    // numbersList8.reduce((accumulator, currentvalue) => {
+    //     return accumulator + currentvalue;
+    // },0); // 0 is the intial value assigned to accumulator, like accumulator = 0 it is optional
+    
+    //How it is working internally 
+    //when you initialize accumulator = 0
+    //a = 0, c = 1 => a = 1
+    //a = 1, c = 6 => a = 7
+    //a = 7, c = 5 => a = 12
+    //a = 12, c = 7 => a = 19
+    //a = 19, c = 9 => a = 28
+    // const sum2 = numbersList8.reduce((accumulator, currentvalue) => {
+    //     return accumulator + currentvalue;
+    // },0);
+        
+    //when you not initialize accumulator = 0
+    //a = 1, c = 6 => a = 7
+    //a = 7, c = 5 => a = 12
+    //a = 12, c = 7 => a = 19
+    //a = 19, c = 9 => a = 28
+        const sum2 = numbersList8.reduce((accumulator, currentvalue) => accumulator + currentvalue);
+        console.log(sum2);
+
+39. Exercise 1- Array from Range
+	const numbersList9 = arrayFromRange(2, 4);
+	console.log(numbersList9);
+
+	function arrayFromRange(min, max)
+	{
+    		let array = [];
+    		for(let i = min; i <= max; i++)
+        		array.push(i);
+    		return array;
+	}
+
+40. Exercise 2- Includes
+	const numbersList10 = [1,6,5,7,9];
+	console.log(numbersList10.includes(9));
+
+    // create the includes method manually like below
+
+	const isPresent = includes(numbersList10, 10);
+	console.log(isPresent);
+	function includes(array, searchElement){
+    		for(let n of array){
+        		if(n === searchElement)
+            			return true;
+    		}
+    		return false
+	}
+
+41. Exercise 3- Except
+	const numbersList11 = [1,6,5,7,9];
+
+	const outPut = except(numbersList11, [1,7]);
+	console.log(outPut);
+
+	function except(array, excluded){
+    		const outputArray = [];
+
+    		for(let element of array)
+        		if(!excluded.includes(element))
+            			outputArray.push(element);
+
+    		return outputArray;
+	}
+Note:
+shortcuts
+=========
+1. Ctrl + shift + i       --> Open Inspect in browser 
+2. F2                     --> To rename the variables at a time 
+3. shift+ alt+ downarrow  --> To copy the line and move it to nextline
+4. alt + downarrow        --> To move the line down
